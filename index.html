@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Name</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <div class="logo">Company Name</div>
+        <nav class="menu">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1>We help teams build reliable systems.</h1>
+            <p class="sub">
+              A short line about what you do and who you do it for. Keep it simple and clear.
+            </p>
+            <div class="cta">
+              <a class="btn" href="#contact">Contact us</a>
+              <a class="btn btn-ghost" href="#services">View services</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h3>Quick snapshot</h3>
+            <ul>
+              <li>Location: Cape Town</li>
+              <li>Focus: Engineering & delivery</li>
+              <li>Turnaround: Fast, practical</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <h2>Services</h2>
+          <div class="cards">
+            <div class="card">
+              <h3>Service 1</h3>
+              <p>One sentence on what this service includes and who it helps.</p>
+            </div>
+            <div class="card">
+              <h3>Service 2</h3>
+              <p>One sentence on what this service includes and who it helps.</p>
+            </div>
+            <div class="card">
+              <h3>Service 3</h3>
+              <p>One sentence on what this service includes and who it helps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section alt">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            Write 3–5 lines about the company. Keep it concrete: what you do, how you work, and what results you aim for.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+
+          <!-- Option A: simple mailto (no backend) -->
+          <form class="form" action="mailto:you@example.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input name="name" required />
+            </label>
+
+            <label>
+              Email
+              <input name="email" type="email" required />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+
+            <button class="btn" type="submit">Send</button>
+          </form>
+
+          <p class="tiny">
+            Tip: This “mailto” option opens the visitor’s email app. Later we can switch to a form service so submissions go to your inbox automatically.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>© <span id="year"></span> Company Name</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
