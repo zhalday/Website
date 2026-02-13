@@ -22,7 +22,7 @@ html,body{ height:100%; }
 
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background:var(--bg);
   color:var(--text);
   line-height:1.4;
@@ -59,15 +59,35 @@ a{
   gap: 18px;
 }
 
-.logo{
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
+/* Brand (wordmark + centered tagline) */
+.brand{
+  display:flex;
+  flex-direction: column;    /* stack word + tagline */
+  align-items: center;       /* center tagline under word */
+  gap: 3px;
+  text-decoration:none;
+  width: max-content;        /* brand width matches the wordmark width */
 }
 
+.brand-word{
+  font-weight: 700;
+  letter-spacing: 0.28em;    /* doubled from 0.14em */
+  text-transform: uppercase;
+  font-size: 18px;           /* bigger */
+  color: var(--text);
+  line-height: 1.05;
+}
+
+.brand-tagline{
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.05;
+}
+
+/* Nav links */
 .menu{
   display:flex;
   align-items:center;
@@ -152,6 +172,7 @@ h3{
   color: var(--text);
   font-size: 14px;
   letter-spacing: 0.02em;
+  font-family: inherit;
 }
 
 .btn:hover{
@@ -226,6 +247,7 @@ input, textarea{
   background: rgba(255,255,255,.04);
   color: var(--text);
   outline: none;
+  font-family: inherit;
 }
 
 input:focus, textarea:focus{

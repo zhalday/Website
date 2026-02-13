@@ -8,6 +8,15 @@
       name="description"
       content="Deep Field is a boutique management consulting firm helping smaller businesses modernise operations, deliver change, and adopt practical automation and AI."
     />
+
+    <!-- Space Mono (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -15,7 +24,11 @@
     <!-- Header -->
     <header class="header">
       <div class="container nav">
-        <div class="logo">Deep Field</div>
+        <a class="brand" href="#top" aria-label="Deep Field home">
+          <span class="brand-word">Deep Field</span>
+          <span class="brand-tagline">Engineered Intelligence</span>
+        </a>
+
         <nav class="menu" aria-label="Primary">
           <a href="#mission">Mission</a>
           <a href="#people">People</a>
@@ -51,7 +64,7 @@
           <div class="hero-card">
             <h3>Quick snapshot</h3>
             <ul>
-              <li>Focus: Strategy -> execution, fast.</li>
+              <li>Focus: Strategy → execution, fast.</li>
               <li>Clients: SMEs and growth-stage teams.</li>
               <li>Style: Small team, senior delivery.</li>
             </ul>
@@ -215,8 +228,6 @@
             We'll respond with next steps and a simple engagement option.
           </p>
 
-          <!-- Simple no-backend contact option (mailto).
-               We can swap this later to a form service (Formspree/Netlify Forms/etc.) -->
           <form class="form" action="mailto:hello@deepfield.co.za" method="post" enctype="text/plain">
             <label>
               Name
@@ -243,7 +254,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <span>&copy; <span id="year"></span> Deep Field</span>
@@ -253,4 +263,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
