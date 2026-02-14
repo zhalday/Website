@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-ZA">
   <head>
     <meta charset="UTF-8" />
@@ -9,14 +9,16 @@
       content="Deep Field is a boutique management consulting firm helping smaller businesses modernise operations, deliver change, and adopt practical automation and AI."
     />
 
-    <!-- Space Mono (Google Fonts) -->
+    <!-- Sora (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
+    <link rel="icon" type="image/png" href="assets/deepfield-logo.png" />
+    <link rel="apple-touch-icon" href="assets/deepfield-logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -61,14 +63,16 @@
             </p>
           </div>
 
-          <div class="hero-card">
-            <h3>Quick snapshot</h3>
-            <ul>
-              <li>Focus: Strategy → execution, fast.</li>
-              <li>Clients: SMEs and growth-stage teams.</li>
-              <li>Style: Small team, senior delivery.</li>
-            </ul>
+          <div class="hero-visual" aria-hidden="true">
+            <span class="hero-visual-kicker">Featured Engagement</span>
+            <p class="hero-visual-title">Operating system redesign for a growth-stage leadership team.</p>
           </div>
+        </div>
+
+        <div class="container proof-strip" aria-label="Proof points">
+          <span class="proof-item"><strong>12+</strong> Delivery programs led</span>
+          <span class="proof-item"><strong>3-6 weeks</strong> Typical first impact window</span>
+          <span class="proof-item"><strong>Senior-only</strong> No handoff model</span>
         </div>
       </section>
 
@@ -90,10 +94,6 @@
               <h3>Execution</h3>
               <p>Break work into achievable increments and ship outcomes, not decks.</p>
             </div>
-            <div class="card">
-              <h3>Capability</h3>
-              <p>Leave your team stronger with simple processes, tooling, and repeatable playbooks.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -111,10 +111,6 @@
             <div class="card">
               <h3>Senior-led</h3>
               <p>No bait-and-switch. The people you meet are the people doing the work.</p>
-            </div>
-            <div class="card">
-              <h3>Pragmatic</h3>
-              <p>We focus on the simplest thing that works and iterate from real feedback.</p>
             </div>
             <div class="card">
               <h3>Accountable</h3>
@@ -141,10 +137,6 @@
             <div class="card">
               <h3>Delivery partners</h3>
               <p>When build capacity is needed, we bring trusted hands and keep quality tight.</p>
-            </div>
-            <div class="card">
-              <h3>Vendors</h3>
-              <p>We help you select vendors with clear scope, measurable outcomes, and sensible governance.</p>
             </div>
           </div>
         </div>
@@ -176,15 +168,6 @@
               </p>
               <p class="tiny">Outcome: time saved weekly, fewer errors, clear ownership.</p>
             </article>
-
-            <article class="card">
-              <h3>AI enablement for SMEs</h3>
-              <p>
-                Identified "quick win" AI use cases, prototyped solutions, and set a safe adoption plan:
-                policy, training, and measurable rollout.
-              </p>
-              <p class="tiny">Outcome: usable tools in production, not a stalled pilot.</p>
-            </article>
           </div>
 
           <div class="cta" style="margin-top: 18px;">
@@ -211,10 +194,6 @@
               <h3>How we work</h3>
               <p>Lean teams, direct communication, and realistic plans. Remote-friendly by default.</p>
             </div>
-            <div class="card">
-              <h3>Interested?</h3>
-              <p>Send a short note with what you do, what you've delivered, and what you want to learn next.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -228,7 +207,15 @@
             We'll respond with next steps and a simple engagement option.
           </p>
 
-          <form class="form" action="mailto:hello@deepfield.co.za" method="post" enctype="text/plain">
+          <form
+            id="contact-form"
+            class="form"
+            action="https://formsubmit.co/hello@deepfield.co.za"
+            method="post"
+          >
+            <input type="hidden" name="_subject" value="New Deep Field website enquiry" />
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="visually-hidden" />
+            <input type="hidden" name="_captcha" value="false" />
             <label>
               Name
               <input name="name" required />
@@ -245,6 +232,7 @@
             </label>
 
             <button class="btn" type="submit">Send</button>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
           </form>
 
           <p class="tiny" style="margin-top: 10px;">
