@@ -271,6 +271,54 @@ h3{
 
 .card p{ margin: 0; color: var(--muted); line-height: 1.6; }
 
+.md-work-card{
+  display: grid;
+  gap: 12px;
+}
+
+.md-work-details{
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.md-work-details summary{
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.md-work-body{
+  margin-top: 10px;
+}
+
+.md-work-body h1{
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  max-width: none;
+}
+
+.md-work-body h2{
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+
+.md-work-body p,
+.md-work-body li{
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.md-work-body ul{
+  margin: 8px 0 12px;
+  padding-left: 20px;
+}
+
 /* Form */
 .form{
   margin-top: var(--space-3);

@@ -1,0 +1,8 @@
+{
+  "name": "deep-field-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx.cmd --yes serve . -l 5500"
+  }
+}
