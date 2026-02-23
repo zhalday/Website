@@ -53,7 +53,7 @@ async function loadWorkMarkdown() {
       return;
     }
 
-    for (const item of items) {
+    for (const [index, item] of items.entries()) {
       if (!item || typeof item.file !== "string") {
         continue;
       }
@@ -67,6 +67,8 @@ async function loadWorkMarkdown() {
       const headingMatch = markdown.match(/^#\s+(.+)$/m);
       const title = item.title || (headingMatch ? headingMatch[1].trim() : "Case Study");
       const excerpt = getFirstParagraph(markdown);
+      const wordCount = markdown.split(/\s+/).filter(Boolean).length;
+      const readMinutes = Math.max(2, Math.round(wordCount / 220));
       const renderedBody =
         typeof marked === "object" && typeof marked.parse === "function"
           ? marked.parse(markdown)
@@ -74,12 +76,20 @@ async function loadWorkMarkdown() {
 
       const card = document.createElement("article");
       card.className = "card md-work-card";
+      card.dataset.variant = String((index % 4) + 1);
       card.innerHTML = `
+        <p class="md-work-meta">Case Study ${index + 1} · ${readMinutes} min read</p>
         <h3>${escapeHtml(title)}</h3>
         <p>${escapeHtml(excerpt)}</p>
         <details class="md-work-details">
           <summary>Read full case study</summary>
-          <div class="md-work-body">${renderedBody}</div>
+          <div class="md-work-body">
+            ${renderedBody}
+            <div class="md-work-close-wrap">
+              <p class="md-work-close-note">Done reading? Close this case study and continue to the next one.</p>
+              <button class="md-work-close" type="button">Minimize article</button>
+            </div>
+          </div>
         </details>
       `;
 
@@ -91,6 +101,24 @@ async function loadWorkMarkdown() {
 }
 
 loadWorkMarkdown();
+
+if (workMarkdownContainer) {
+  workMarkdownContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || !target.classList.contains("md-work-close")) {
+      return;
+    }
+
+    const details = target.closest(".md-work-details");
+    if (details instanceof HTMLDetailsElement) {
+      details.open = false;
+      const summary = details.querySelector("summary");
+      if (summary instanceof HTMLElement) {
+        summary.focus();
+      }
+    }
+  });
+}
 
 if (contactForm && formStatus && !isLocalFile) {
   contactForm.addEventListener("submit", async (event) => {
