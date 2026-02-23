@@ -3,6 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "npx.cmd --yes serve . -l 5500"
+    "dev": "npx.cmd --yes serve . --listen 5500"
   }
 }
