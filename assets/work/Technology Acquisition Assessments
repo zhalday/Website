@@ -1,0 +1,137 @@
+Technology Acquisition Assessments for a Scientific Infrastructure Programme
+Overview
+
+A national science and engineering organisation was preparing for the next phase of a multi-decade infrastructure programme. With the transition from a completed flagship deliverable into a larger system build, leadership needed to make two high-stakes technology decisions:
+
+Which capabilities to acquire next
+
+How to reduce acquisition risk through structured evaluation, not intuition or vendor influence
+
+An IfM-guided technology acquisition assessment, turning complex technical requirements, market constraints, and organisational readiness into a clear decision framework for leadership.
+
+The Challenge
+
+The programme faced two critical capability gaps.
+
+1) Data infrastructure capability gap
+
+Future operations required moving and storing extreme volumes of data: multi-terabit-per-second transport and hundreds of petabytes per year. In the local context, a complete “standard commercial” solution was unlikely to be available off-the-shelf.
+
+2) Maintenance capability gap for cryogenic systems
+
+Highly sensitive instrumentation relied on cryogenic cooling systems with demanding upkeep. When maintenance capability sits outside the organisation:
+
+turnaround times increase
+
+operational uptime decreases
+
+lifecycle cost rises
+
+These decisions could not be made on reputation, persuasion, or past precedent. They required structured evaluation grounded in readiness, fit, and the organisation’s ability to absorb the capability.
+
+Deep Field Approach
+
+We applied a three-step method aligned to recognised technology acquisition frameworks.
+
+1) Identify the technologies, partners, and maturity
+
+We defined the target technologies and assessed feasible acquisition paths:
+
+Technology 1: Data-Intensive Infrastructure Platform
+A scaled capability requiring multi-discipline delivery, likely through a consortium or collaborative delivery model.
+
+Technology 2: Cryogenic O-Level Maintenance Capability
+Best approached through enablement and capability transfer with an existing specialist provider.
+
+We assessed maturity using Technology Readiness concepts to clarify expected development effort and integration risk.
+
+2) Evaluate readiness to acquire and operationalise
+
+We evaluated each acquisition through three lenses designed to prevent a common failure mode: buying impressive technology that the organisation cannot integrate, operate, or sustain.
+
+A) Absorptive Capacity
+Can the organisation adopt and exploit the capability in practice (skills, routines, internal acceptance, reuse of knowledge)?
+Assessed via a structured checklist and weighted scoring.
+
+B) Partner Compatibility
+Is the delivery partner (or consortium) compatible in working style, capability, strategic alignment, and prior alliance performance?
+
+C) Technology Suitability
+Does the capability fit the organisation’s objectives with feasible access to know-how (know-what / know-how / know-who), manageable technical challenges, and acceptable cost drivers?
+
+3) Convert analysis into decision-ready guidance
+
+We consolidated findings into a leadership-friendly acquisition view:
+
+market readiness vs technology readiness
+
+organisational absorption readiness
+
+partner model suitability
+
+technology fit and constraints
+
+recommended actions to proceed safely into procurement planning
+
+The Two Technology Assessments
+Technology 1: Data-Intensive Infrastructure Platform (Future Operations)
+
+This assessment focused on building/acquiring the capability to handle extreme throughput and storage requirements, where system integration is the real challenge: land/power/fibre, cooling, physical and cyber security, operating model, and long-term sustainability.
+
+Key insight
+The market need was clear and time-bound, but a complete off-the-shelf solution in the local environment was unlikely. The most realistic path was a collaborative delivery model with structured requirements definition and governance.
+
+Technology 2: Cryogenic O-Level Maintenance Capability (Uptime and Cost)
+
+This assessment addressed uptime risk caused by externalised maintenance, long repair cycles, and expensive OEM turnaround.
+
+Key insight
+The technology is mature and operationally proven. The risk sits less in invention and more in capability transfer: local reproducibility of workflow, training under real operating conditions, and sustained in-house enablement.
+
+What We Delivered
+
+Deep Field produced a decision-ready acquisition pack including:
+
+a structured technology selection rationale (why these capabilities, why now)
+
+maturity and market readiness assessment
+
+absorptive capacity scoring (ability to adopt and exploit)
+
+partner compatibility assessment
+
+technology suitability assessment against organisational goals
+
+a consolidated decision map indicating conditions to proceed
+
+practical next steps: risk assessment, steering committee formation, requirements/spec work, budget shaping, knowledge transfer planning, and post-acquisition monitoring
+
+Outcome
+
+The organisation gained:
+
+clarity on which technologies to pursue and why
+
+a defensible basis for procurement and negotiation
+
+early visibility of risk (integration, partner model, knowledge transfer)
+
+a structured roadmap to reduce uncertainty before committing major spend
+
+Most importantly, leadership received options and trade-offs, not just a recommendation.
+
+How Deep Field Helps
+
+Deep Field supports organisations making high-stakes technology decisions under uncertainty. We help you:
+
+identify future-critical capability gaps
+
+assess readiness (technology, market, organisational)
+
+evaluate partners and delivery models
+
+shape requirements and verification strategy early
+
+translate analysis into decision-ready direction for leadership
+
+If you’re planning a major technology acquisition where integration risk is high, we can act as an independent technical partner from assessment through implementation.
