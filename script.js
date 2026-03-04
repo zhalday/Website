@@ -5,6 +5,56 @@ const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 const isLocalFile = window.location.protocol === "file:";
 const ajaxEndpoint = "https://formsubmit.co/ajax/hello@deepfield.co.za";
+const serviceToggles = Array.from(document.querySelectorAll(".service-toggle"));
+
+function setServiceToggleState(toggle, expanded) {
+  toggle.setAttribute("aria-expanded", String(expanded));
+
+  const parentCard = toggle.closest(".service-card");
+  if (parentCard instanceof HTMLElement) {
+    parentCard.classList.toggle("is-open", expanded);
+  }
+}
+
+for (const toggle of serviceToggles) {
+  setServiceToggleState(toggle, toggle.getAttribute("aria-expanded") === "true");
+
+  toggle.addEventListener("click", () => {
+    const currentlyExpanded = toggle.getAttribute("aria-expanded") === "true";
+    setServiceToggleState(toggle, !currentlyExpanded);
+  });
+}
+
+// ── Scroll reveal ──
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  },
+  { rootMargin: "0px 0px -60px 0px", threshold: 0.08 }
+);
+
+function observeReveal(el, stagger = 0) {
+  el.classList.add("reveal");
+  if (stagger > 0) el.style.setProperty("--stagger", String(stagger));
+  revealObserver.observe(el);
+}
+
+// Section headings, subtext, and CTA blocks
+for (const el of document.querySelectorAll(".section h2, .section .sub, .section .cta")) {
+  observeReveal(el);
+}
+
+// Cards within each section: staggered
+for (const group of document.querySelectorAll(".section .cards")) {
+  Array.from(group.querySelectorAll(":scope > .card")).forEach((card, i) => {
+    observeReveal(card, i);
+  });
+}
 
 function escapeHtml(value) {
   return value
@@ -36,6 +86,45 @@ function getFirstParagraph(markdown) {
 
   return "Read the full case study.";
 }
+
+// ── Case study modal ──
+const workModal = document.getElementById("work-modal");
+const modalMeta = document.getElementById("modal-meta");
+const modalBody = document.getElementById("modal-body");
+const workModalData = [];
+let lastFocusedBtn = null;
+
+function openWorkModal(index) {
+  const data = workModalData[index];
+  if (!data || !workModal || !modalMeta || !modalBody) return;
+  modalMeta.textContent = data.meta;
+  modalBody.innerHTML = `<div class="md-work-body">${data.body}</div>`;
+  workModal.removeAttribute("hidden");
+  document.body.style.overflow = "hidden";
+  workModal.querySelector(".modal-close")?.focus();
+}
+
+function closeWorkModal() {
+  if (!workModal) return;
+  workModal.classList.add("is-closing");
+  setTimeout(() => {
+    workModal.setAttribute("hidden", "");
+    workModal.classList.remove("is-closing");
+    document.body.style.overflow = "";
+    if (lastFocusedBtn instanceof HTMLElement) lastFocusedBtn.focus();
+  }, 200);
+}
+
+if (workModal) {
+  workModal.querySelector(".modal-backdrop")?.addEventListener("click", closeWorkModal);
+  workModal.querySelector(".modal-close")?.addEventListener("click", closeWorkModal);
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && workModal && !workModal.hasAttribute("hidden")) {
+    closeWorkModal();
+  }
+});
 
 async function loadWorkMarkdown() {
   if (!workMarkdownContainer) {
@@ -74,6 +163,8 @@ async function loadWorkMarkdown() {
           ? marked.parse(markdown)
           : `<p>${escapeHtml(markdown)}</p>`;
 
+      workModalData.push({ meta: `Case Study ${index + 1} · ${readMinutes} min read`, body: renderedBody });
+
       const card = document.createElement("article");
       card.className = "card md-work-card";
       card.dataset.variant = String((index % 4) + 1);
@@ -81,19 +172,11 @@ async function loadWorkMarkdown() {
         <p class="md-work-meta">Case Study ${index + 1} · ${readMinutes} min read</p>
         <h3>${escapeHtml(title)}</h3>
         <p>${escapeHtml(excerpt)}</p>
-        <details class="md-work-details">
-          <summary>Read full case study</summary>
-          <div class="md-work-body">
-            ${renderedBody}
-            <div class="md-work-close-wrap">
-              <p class="md-work-close-note">Done reading? Close this case study and continue to the next one.</p>
-              <button class="md-work-close" type="button">Minimize article</button>
-            </div>
-          </div>
-        </details>
+        <button class="md-work-open" type="button" data-index="${index}">Read case study &rarr;</button>
       `;
 
       workMarkdownContainer.appendChild(card);
+      observeReveal(card, index);
     }
   } catch (_error) {
     // Leave the section quiet if markdown loading fails.
@@ -104,19 +187,10 @@ loadWorkMarkdown();
 
 if (workMarkdownContainer) {
   workMarkdownContainer.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement) || !target.classList.contains("md-work-close")) {
-      return;
-    }
-
-    const details = target.closest(".md-work-details");
-    if (details instanceof HTMLDetailsElement) {
-      details.open = false;
-      const summary = details.querySelector("summary");
-      if (summary instanceof HTMLElement) {
-        summary.focus();
-      }
-    }
+    const btn = event.target.closest(".md-work-open");
+    if (!(btn instanceof HTMLElement)) return;
+    lastFocusedBtn = btn;
+    openWorkModal(Number(btn.dataset.index));
   });
 }
 
