@@ -65,6 +65,11 @@ for (const group of document.querySelectorAll(".section .cards")) {
   });
 }
 
+// Toolkit logos: staggered reveal
+Array.from(document.querySelectorAll(".toolkit-logos .toolkit-logo-item")).forEach((logo, i) => {
+  observeReveal(logo, i);
+});
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
