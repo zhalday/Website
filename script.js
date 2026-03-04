@@ -25,6 +25,15 @@ for (const toggle of serviceToggles) {
   });
 }
 
+// ── Hero visual expand toggle ──
+const heroExpandToggle = document.querySelector(".hero-visual-expand-toggle");
+if (heroExpandToggle) {
+  heroExpandToggle.addEventListener("click", () => {
+    const expanded = heroExpandToggle.getAttribute("aria-expanded") === "true";
+    heroExpandToggle.setAttribute("aria-expanded", String(!expanded));
+  });
+}
+
 // ── Scroll reveal ──
 const revealObserver = new IntersectionObserver(
   (entries) => {

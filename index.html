@@ -9,11 +9,11 @@
       content="Deep Field is a boutique management consulting firm helping smaller businesses modernise operations, deliver change, and adopt practical automation and AI."
     />
 
-    <!-- Sora (Google Fonts) -->
+    <!-- Sora + Space Grotesk (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -69,41 +69,70 @@
           </div>
 
           <div class="hero-visual">
-            <span class="hero-visual-kicker">Featured Engagement</span>
-            <p class="hero-visual-title">Operating model reset for a growth-stage leadership team.</p>
+            <span class="hero-visual-kicker">Featured Case Study</span>
+            <p class="hero-visual-title">Technology Acquisition Assessment: Data-Intensive Infrastructure Platform</p>
             <p class="hero-visual-sub">
-              Aligned priorities, decision rights, and execution rhythm to improve delivery speed and management focus.
+              A large scientific infrastructure programme needed to move extreme volumes of data — estimates in the tens of terabits per second and hundreds of petabytes per year. The challenge wasn't "buy a data centre." It was designing an acquisition strategy for a capability that doesn't exist locally as an off-the-shelf product.
             </p>
-            <div class="hero-visual-tags">
-              <span>Leadership Team</span>
-              <span>Decision Clarity</span>
-              <span>Execution Rhythm</span>
+
+            <div class="hero-visual-expand">
+              <button class="hero-visual-expand-toggle" type="button" aria-expanded="false">
+                What Deep Field did <span aria-hidden="true" class="hero-visual-expand-icon"></span>
+              </button>
+              <div class="hero-visual-expand-body">
+                <div class="hero-visual-expand-inner">
+                  <ol class="hero-visual-depth-list">
+                    <li>Identified the future-critical capability and the system-level requirements</li>
+                    <li>Assessed technology readiness vs market readiness and where development was required</li>
+                    <li>Evaluated organisational absorptive capacity — can the client actually adopt and run it?</li>
+                    <li>Assessed partner and consortium suitability for delivery at scale</li>
+                    <li>Produced a decision framework showing conditions were favourable to proceed</li>
+                  </ol>
+                  <p class="hero-visual-outcome"><strong>Outcome:</strong> A defensible acquisition roadmap — what to build, what to buy, who to partner with, and where the main risks sit before procurement begins.</p>
+                </div>
+              </div>
             </div>
-            <a class="hero-visual-link" href="#work">Read Case Studies</a>
+
+            <div class="hero-visual-tags">
+              <span>Technology Acquisition</span>
+              <span>Systems Engineering</span>
+              <span>Decision Framework</span>
+            </div>
+
+            <div class="hero-visual-ctas">
+              <a class="hero-visual-link" href="#work">Read the full assessment</a>
+              <a class="hero-visual-link hero-visual-link--ghost" href="#contact">Talk to a Client's Engineer</a>
+            </div>
           </div>
         </div>
 
       </section>
 
       <!-- Mission -->
-      <section id="mission" class="section alt">
+      <section id="mission" class="section section-mission">
         <div class="container">
-          <h2>Mission</h2>
-          <p class="sub" style="max-width: 70ch;">
+          <div class="mission-head">
+            <h2 class="mission-title">Mission</h2>
+            <p class="hero-eyebrow mission-chip">Engineered Intelligence</p>
+          </div>
+          <p class="sub mission-intro">
             Deep Field turns complexity into clarity.
             We combine systems engineering, technology strategy, and analytical insight to help organisations make better decisions about the systems shaping their future.
           </p>
 
-          <div class="cards" style="margin-top: 18px; grid-template-columns: repeat(3, minmax(0, 1fr));">
-            <div class="card">
+          <div class="cards mission-grid">
+            <div class="card mission-card">
+              <p class="mission-card-kicker">01</p>
               <h3>Clarity</h3>
               <p>Identify the real system: its constraints, dependencies, and leverage points. Only then design the solution.</p>
             </div>
-            <div class="card">
+            <div class="card mission-card">
+              <p class="mission-card-kicker">02</p>
               <h3>Insight</h3>
               <p>Use data, modelling, and structured analysis to reveal the signals hidden inside complex systems.</p>
             </div>
-            <div class="card">
+            <div class="card mission-card">
+              <p class="mission-card-kicker">03</p>
               <h3>Execution</h3>
               <p>Break complex problems into solvable parts and deliver working outcomes, not just recommendations.</p>
             </div>
@@ -112,14 +141,14 @@
       </section>
 
       <!-- Services -->
-      <section id="services" class="section">
+      <section id="services" class="section section-services">
         <div class="container">
-          <h2>Services</h2>
-          <p class="sub" style="max-width: 75ch;">
+          <h2 class="section-display-title">Services</h2>
+          <p class="sub section-intro service-intro">
             Practical support to help small and mid-sized teams move faster with better decision quality and execution.
           </p>
 
-          <div class="cards" style="margin-top: 18px;">
+          <div class="cards service-grid">
             <div class="card service-card">
               <div class="service-accordion">
                 <button
@@ -133,46 +162,133 @@
                 </button>
                 <div id="service-tech-acq" class="service-content">
                   <div class="service-content-inner">
-                    <ol class="service-subheadings">
-                      <li>Identifying Future Technologies</li>
-                      <li>Technology Readiness</li>
-                      <li>Absorptive Capacity</li>
-                      <li>Partner Compatibility</li>
-                      <li>Technology-Organisation Fit</li>
-                      <li>Acquisition Framework</li>
-                    </ol>
+                    <p class="service-subheadings">Deep Field evaluates technology investments through six lenses — future relevance, technical maturity, organisational readiness, partner compatibility, strategic fit, and acquisition strategy.</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card">
-              <h3>Instrument Validation</h3>
+            <div class="card service-card">
+              <div class="service-accordion">
+                <button
+                  class="service-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-vv"
+                >
+                  <span>Verification and Validation</span>
+                  <span class="service-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div id="service-vv" class="service-content">
+                  <div class="service-content-inner">
+                    <p class="service-subheadings">Deep Field helps organisations ensure that complex systems are built correctly and perform as intended.</p>
+                    <p class="service-subheadings">We apply structured engineering methods to verify that systems meet their requirements and validate that they achieve their intended operational outcomes.</p>
+                    <p class="service-subheadings">Our approach combines requirements traceability, structured testing, and independent technical assessment to provide confidence in system performance.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card">
-              <h3>Digital Infrastructure Engineering</h3>
+            <div class="card service-card">
+              <div class="service-accordion">
+                <button
+                  class="service-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-client-eng"
+                >
+                  <span>The Client's Engineer</span>
+                  <span class="service-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div id="service-client-eng" class="service-content">
+                  <div class="service-content-inner">
+                    <p class="service-subheadings">Major engineering and infrastructure projects involve multiple consultants, contractors, and technical disciplines.</p>
+                    <p class="service-subheadings">Deep Field acts as the Client's Engineer, representing your technical interests throughout the lifecycle of the project.</p>
+                    <p class="service-subheadings">We provide both project management oversight and systems engineering leadership to ensure that all parties involved in the project remain aligned with your requirements, technical standards, and strategic objectives.</p>
+                    <p class="service-subheadings">In simple terms, we act as your independent technical point of control — ensuring the system that gets delivered is the system you actually need.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card">
-              <h3>Organisational Culture Diagnostics</h3>
+            <div class="card service-card">
+              <div class="service-accordion">
+                <button
+                  class="service-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-org-culture"
+                >
+                  <span>Organisational Culture Diagnostics</span>
+                  <span class="service-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div id="service-org-culture" class="service-content">
+                  <div class="service-content-inner">
+                    <p class="service-subheadings">Organisational performance is shaped not only by technology and systems, but also by the culture in which people work.</p>
+                    <p class="service-subheadings">Deep Field helps organisations understand how their culture influences behaviour, communication, learning, and decision-making.</p>
+                    <p class="service-subheadings">We design structured organisational surveys using validated research frameworks — including the Edmondson Psychological Safety model — and perform detailed analysis of the results to reveal cultural patterns that are often invisible to leadership.</p>
+                    <p class="service-subheadings">Our goal is to provide leadership teams with clear, evidence-based insight into organisational culture, enabling targeted interventions that strengthen performance and collaboration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card service-card">
+              <div class="service-accordion">
+                <button
+                  class="service-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-ai"
+                >
+                  <span>AI Implementation</span>
+                  <span class="service-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div id="service-ai" class="service-content">
+                  <div class="service-content-inner">
+                    <p class="service-subheadings">Artificial intelligence is transforming how organisations analyse data, automate work, and support decision-making.</p>
+                    <p class="service-subheadings">However, many organisations struggle to move from AI experimentation to real operational deployment.</p>
+                    <p class="service-subheadings">Deep Field helps organisations identify practical AI opportunities and implement solutions that integrate into existing systems and workflows.</p>
+                    <p class="service-subheadings">Our focus is on engineering AI into real operational environments — ensuring that models, data pipelines, and workflows function reliably and deliver measurable value.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card service-card">
+              <div class="service-accordion">
+                <button
+                  class="service-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="service-risk"
+                >
+                  <span>Risk Engineering &amp; Decision Support</span>
+                  <span class="service-toggle-icon" aria-hidden="true"></span>
+                </button>
+                <div id="service-risk" class="service-content">
+                  <div class="service-content-inner">
+                    <p class="service-subheadings">Complex projects and organisations don't fail because people aren't smart — they fail because risk is misunderstood, unmanaged, or ignored until it becomes expensive.</p>
+                    <p class="service-subheadings">Deep Field helps organisations identify, quantify, and manage risk across technical systems, delivery programmes, and organisational change.</p>
+                    <p class="service-subheadings">We turn uncertainty into clear decision options for leadership by linking risk to what matters most: performance, cost, schedule, and operational outcomes.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- People -->
-      <section id="people" class="section">
+      <section id="people" class="section section-people">
         <div class="container">
-          <h2>People</h2>
-          <p class="sub" style="max-width: 75ch;">
+          <h2 class="section-display-title">People</h2>
+          <p class="sub section-intro people-intro">
             We're a small senior team. We embed with founders and leadership teams, work transparently,
             and stay close to reality. When delivery gets messy, we don't disappear.
           </p>
 
-          <div class="cards" style="margin-top: 18px;">
-            <div class="card">
+          <div class="cards people-grid">
+            <div class="card people-card">
               <h3>Senior-led</h3>
               <p>No bait-and-switch. The people you meet are the people doing the work.</p>
             </div>
-            <div class="card">
+            <div class="card people-card">
               <h3>Accountable</h3>
               <p>Clear owners, clear next actions, clear progress signals.</p>
             </div>
